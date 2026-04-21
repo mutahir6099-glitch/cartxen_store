@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | cartxen_store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+        .checkout-main, .checkout-sidebar {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        .form-section { margin-bottom: 2rem; }
+        .form-section h3 { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .full-row { margin-bottom: 1rem; }
+        .checkout-summary-item { display: flex; justify-content: space-between; margin-bottom: 0.75rem; color: var(--text-secondary); }
+        .checkout-total { border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: space-between; font-weight: 700; font-size: 1.25rem; color: var(--accent-blue); }
+        .payment-methods { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .payment-method { flex: 1; border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; text-align: center; cursor: pointer; transition: var(--transition); }
+        .payment-method.active { border-color: var(--accent-blue); background: rgba(59, 130, 246, 0.1); }
+        .card-preview { background: linear-gradient(135deg, #2563eb, #1e3a8a); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; color: white; }
+        .card-preview::after { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: rgba(255,255,255,0.1); transform: rotate(45deg); }
+        @media (max-width: 768px) { .checkout-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+            </a>
+            <a href="products.html" class="btn btn-outline" style="width: auto;"><i class="fa-solid fa-arrow-left"></i> Back to Shopping</a>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <!-- Main Form -->
+        <div class="checkout-main">
+            <form id="checkoutForm">
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-truck"></i> Shipping Information</h3>
+                    <div class="full-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-input" placeholder="e.g. Ali Raza" required>
+                        </div>
+                    </div>
+                    <div class="full-row">
+                        <div class="form-group">
+                            <label>Delivery Address</label>
+                            <input type="text" class="form-input" placeholder="House #, Street, Area" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-input" placeholder="Karachi/Lahore..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Distance from Store (km)</label>
+                            <input type="number" id="distanceInput" class="form-input" placeholder="e.g. 5" min="1" value="2" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-credit-card"></i> Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <i class="fa-solid fa-credit-card"></i><br>Card
+                        </div>
+                        <div class="payment-method" data-method="cod">
+                            <i class="fa-solid fa-hand-holding-dollar"></i><br>COD
+                        </div>
+                    </div>
+
+                    <div id="cardSection">
+                        <div class="card-preview">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+                                <i class="fa-solid fa-microchip" style="font-size: 2rem; color: #fbbf24;"></i>
+                                <i class="fa-brands fa-cc-visa" style="font-size: 2rem;"></i>
+                            </div>
+                            <div style="font-size: 1.25rem; letter-spacing: 2px; margin-bottom: 1rem;" id="cardNumDisplay">•••• •••• •••• ••••</div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.8rem;">
+                                <div>CARD HOLDER<br><span id="cardNameDisplay">YOUR NAME</span></div>
+                                <div>EXPIRES<br><span id="cardExpDisplay">MM/YY</span></div>
+                            </div>
+                        </div>
+
+                        <div class="full-row">
+                            <div class="form-group">
+                                <label>Card Number</label>
+                                <input type="text" class="form-input" id="cardNum" placeholder="1234 5678 9101 1121" maxlength="19">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" class="form-input" id="cardExp" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="password" class="form-input" placeholder="•••" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.25rem; padding: 1.25rem;">
+                    Complete Payment & Order
+                </button>
+            </form>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="checkout-sidebar">
+            <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Order Summary</h3>
+            <div id="orderItems">
+                <!-- Items populated by JS -->
+            </div>
+            
+            <div style="margin-top: 2rem;">
+                <div class="checkout-summary-item"><span>Items Total</span><span id="subtotal">Rs 0</span></div>
+                <div class="checkout-summary-item"><span>Delivery Charges (<span id="distDisplay">2</span>km)</span><span id="deliveryDisplay">Rs 300</span></div>
+                <div class="checkout-total"><span>Total Payable</span><span id="total">Rs 0</span></div>
+            </div>
+            
+            <p class="cart-note" style="margin-top: 2rem; text-align: center;">
+                <i class="fa-solid fa-lock"></i> SSL Encrypted & Secure Checkout
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Checkout specific logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderItemsEl = document.getElementById('orderItems');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+            
+            const distanceInput = document.getElementById('distanceInput');
+            const deliveryDisplay = document.getElementById('deliveryDisplay');
+            const distDisplay = document.getElementById('distDisplay');
+
+            const calculateDelivery = () => {
+                const km = parseFloat(distanceInput.value) || 0;
+                // Base 300 for first 2km, then 100 per additional km
+                let charges = 300;
+                if (km > 2) {
+                    charges += (km - 2) * 100;
+                }
+                return charges;
+            };
+            
+            const renderSummary = () => {
+                if (!cart.items.length) {
+                    window.location.href = 'products.html';
+                    return;
+                }
+                
+                orderItemsEl.innerHTML = cart.items.map(item => `
+                    <div class="checkout-summary-item">
+                        <span>${item.name} × ${item.qty}</span>
+                        <span>${formatPrice(item.price * item.qty)}</span>
+                    </div>
+                `).join('');
+                
+                const sub = cart.total();
+                const delivery = calculateDelivery();
+                
+                subtotalEl.textContent = formatPrice(sub);
+                deliveryDisplay.textContent = formatPrice(delivery);
+                distDisplay.textContent = km = parseFloat(distanceInput.value) || 0;
+                totalEl.textContent = formatPrice(sub + delivery);
+            };
+
+            distanceInput?.addEventListener('input', renderSummary);
+            renderSummary();
+
+            // Card preview sync
+            const cardNum = document.getElementById('cardNum');
+            const cardName = document.querySelector('[placeholder="e.g. Ali Raza"]');
+            
+            cardNum?.addEventListener('input', (e) => {
+                let v = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                let matches = v.match(/\d{4,16}/g);
+                let match = matches && matches[0] || '';
+                let parts = [];
+                for (let i=0, len=match.length; i<len; i+=4) {
+                    parts.push(match.substring(i, i+4));
+                }
+                if (parts.length) {
+                    e.target.value = parts.join(' ');
+                }
+                document.getElementById('cardNumDisplay').textContent = e.target.value || '•••• •••• •••• ••••';
+            });
+
+            cardName?.addEventListener('input', (e) => {
+                document.getElementById('cardNameDisplay').textContent = e.target.value.toUpperCase() || 'YOUR NAME';
+            });
+
+            document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Gather Shipping Info
+                const name = document.querySelector('[placeholder="e.g. Ali Raza"]').value;
+                const phone = document.querySelector('[placeholder="03XXXXXXXXX"]').value;
+                const address = document.querySelector('[placeholder="House #, Street, Area"]').value;
+                const city = document.querySelector('[placeholder="Karachi/Lahore..."]').value;
+                
+                // Gather Payment Method
+                const method = document.querySelector('.payment-method.active').dataset.method.toUpperCase();
+                
+                // Construct Message
+                const delivery = calculateDelivery();
+                const km = distanceInput.value;
+                const cartSummary = cart.items.map(i => `• ${i.name} × ${i.qty} — ${formatPrice(i.price * i.qty)}`).join('\n');
+                const totalAmount = formatPrice(cart.total() + delivery);
+                
+                const whatsappMessage = `*NEW ORDER RECEIVED!* 🛍️\n\n` +
+                    `*Customer Details:*\n` +
+                    `Name: ${name}\n` +
+                    `Phone: ${phone}\n` +
+                    `Address: ${address}, ${city} (${km}km distance)\n\n` +
+                    `*Order Summary:*\n${cartSummary}\n\n` +
+                    `*Delivery:* ${formatPrice(delivery)} (${km}km)\n` +
+                    `*Payment Method:* ${method}\n` +
+                    `*Total Payable:* ${totalAmount}\n\n` +
+                    `Please confirm this order.`;
+
+                toast("Finalizing Order...", "info");
+                
+                setTimeout(() => {
+                    // Send to owner's WhatsApp
+                    openWhatsApp(whatsappMessage);
+                    
+                    alert("Order details have been generated. Tapping OK will open WhatsApp to send your order to us for final confirmation.");
+                    cart.clear();
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+
+            // Payment method toggle
+            const methods = document.querySelectorAll('.payment-method');
+            const cardSection = document.getElementById('cardSection');
+            methods.forEach(m => {
+                m.addEventListener('click', () => {
+                    methods.forEach(x => x.classList.remove('active'));
+                    m.classList.add('active');
+                    if(m.dataset.method === 'cod') {
+                        cardSection.style.display = 'none';
+                    } else {
+                        cardSection.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

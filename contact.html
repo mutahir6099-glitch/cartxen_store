@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | cartxen_store</title>
+    <meta name="description" content="Get in touch on WhatsApp, email or via our quick message form. Frequently asked questions about ordering and delivery.">
+    <meta name="theme-color" content="#0a0f1a">
+    <meta property="og:title" content="Contact | cartxen_store">
+    <meta property="og:description" content="Order products via WhatsApp. Fast replies.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛒%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Announcement -->
+    <div class="announcement-bar">
+        <i class="fa-solid fa-truck-fast"></i> Fast processing &amp; delivery across Pakistan — chat on WhatsApp to order
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="wishlistToggle" aria-label="Wishlist" title="Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" id="cartToggle" aria-label="Cart" title="Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Contact</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Contact Us</h1>
+        <p>We're here to help you with your orders.</p>
+    </div>
+
+    <!-- Contact Content -->
+    <section class="section">
+        <div class="contact-container">
+
+            <!-- Contact Info -->
+            <div class="reveal">
+                <h2 style="margin-bottom: 1.5rem;">Get In Touch</h2>
+                <p style="margin-bottom: 2rem;">Have a question about our products or an existing order? Pick your preferred channel — WhatsApp gets the fastest reply.</p>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon" style="color: var(--whatsapp-green); background: rgba(37, 211, 102, 0.1);"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: 0.25rem;">WhatsApp Us</h3>
+                        <p style="margin-bottom: 0.25rem;">Our preferred method — instant replies.</p>
+                        <a href="https://wa.me/923273032424" target="_blank" style="color: var(--text-primary); font-weight: 600;">+92 327 3032424</a>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: 0.25rem;">Email Support</h3>
+                        <p style="margin-bottom: 0.25rem;">For inquiries and bulk orders.</p>
+                        <a href="mailto:info.cartxen@gmail.com" style="color: var(--accent-blue); font-weight: 600;">info.cartxen@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: 0.25rem;">Delivery</h3>
+                        <p style="margin-bottom: 0;">Shipping across Pakistan. Delivery charges apply and are confirmed before dispatch.</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h3 style="margin-bottom: 0.25rem;">Hours</h3>
+                        <p style="margin-bottom: 0;">Mon – Sat, 10 AM – 9 PM (PKT). We reply as fast as we can outside these hours too.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Message Form -->
+            <div class="contact-form-card reveal">
+                <h2 style="margin-bottom: 0.5rem;">Send a Quick Message</h2>
+                <p style="margin-bottom: 2rem;">Fill in the form and we'll open WhatsApp with your message ready to send.</p>
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="cfName">Your Name</label>
+                        <input type="text" id="cfName" class="form-input" placeholder="e.g. Ali Raza" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cfTopic">Topic <span style="color: var(--text-muted); font-weight: 400;">(optional)</span></label>
+                        <input type="text" id="cfTopic" class="form-input" placeholder="e.g. Question about AirPods Pro 2">
+                    </div>
+                    <div class="form-group">
+                        <label for="cfMessage">Message</label>
+                        <textarea id="cfMessage" class="form-textarea" placeholder="Tell us what you need..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
+                    </button>
+                    <p class="cart-note" style="margin-top: 0.75rem;">Tapping send opens WhatsApp with your message pre-filled.</p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background-color: var(--bg-elevated); max-width: 100%; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <h2 class="section-title reveal">Frequently Asked Questions</h2>
+            <p class="section-subtitle reveal">Common questions about orders, delivery and products.</p>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>How do I place an order?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Browse our products, tap the green "Order" button on any item (or add to cart for multiple items, then "Checkout via WhatsApp"). WhatsApp will open with your order pre-filled — just hit send and we'll reply with confirmation and total.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Is delivery free?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. Delivery charges apply and vary depending on your city. We'll confirm the exact charge on WhatsApp before dispatch, so there are no surprises.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>How long does delivery take?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We process orders the same day in most cases. Typical delivery across Pakistan takes 2 – 4 working days depending on location.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Do you accept cash on delivery?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, COD is available for most cities. We may ask for partial advance for higher-value items — we'll let you know when you message us.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Are your products original?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We carry both premium-grade and value-grade items. Each product's description reflects what it is. We test everything before dispatch, and we're always happy to share more detail on WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        <span>Can I return or exchange an item?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If the item arrives damaged or faulty, message us on WhatsApp within 48 hours and we'll arrange a replacement or refund. Buyer's remorse returns are handled case by case.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span class="cart-total-label">Subtotal</span>
+                <span class="cart-total-value" id="cartTotal">Rs 0</span>
+            </div>
+            <button class="btn btn-primary" id="cartCheckout" style="margin-bottom: 0.5rem; width: 100%;">
+                <i class="fa-solid fa-credit-card"></i> Pay with Card
+            </button>
+            <button class="btn btn-outline" id="cartClear" style="width: 100%;">Clear Cart</button>
+            <p class="cart-note">Delivery charges are calculated separately at checkout.</p>
+        </div>
+    </aside>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab fab-top" id="fabTop" aria-label="Back to top" title="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <button class="fab fab-whatsapp" id="fabWhatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+                        <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+                    </a>
+                    <p>Premium accessories. Direct WhatsApp ordering. Delivery across Pakistan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="products.html#chargers">Chargers &amp; Cables</a></li>
+                        <li><a href="products.html#earphones">Earphones</a></li>
+                        <li><a href="products.html#speakers">Speakers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923273032424" target="_blank"><i class="fa-brands fa-whatsapp"></i> +92 327 3032424</a></li>
+                        <li><a href="mailto:info.cartxen@gmail.com"><i class="fa-solid fa-envelope"></i> info.cartxen@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cartxen_store" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/cartxen" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/923273032424" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 cartxen_store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | cartxen_store</title>
+    <meta name="description" content="Browse our full collection of chargers, earphones, speakers and accessories. Live search, filters and WhatsApp ordering.">
+    <meta name="theme-color" content="#0a0f1a">
+    <meta property="og:title" content="Products | cartxen_store">
+    <meta property="og:description" content="Premium accessories at great Pakistani prices. Order via WhatsApp.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛒%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Announcement -->
+    <div class="announcement-bar">
+        <i class="fa-solid fa-truck-fast"></i> Fast processing &amp; delivery across Pakistan — chat on WhatsApp to order
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="wishlistToggle" aria-label="Wishlist" title="Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" id="cartToggle" aria-label="Cart" title="Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Products</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Products</h1>
+        <p>Premium accessories at the best prices in Pakistan. Delivery charges apply.</p>
+    </div>
+
+    <!-- Products Collection -->
+    <section class="section">
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="searchInput" class="search-input" placeholder="Search chargers, earphones, speakers...">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <select id="sortSelect" class="sort-select" aria-label="Sort products">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name-asc">Name: A – Z</option>
+                <option value="name-desc">Name: Z – A</option>
+            </select>
+        </div>
+
+        <!-- Filter chips -->
+        <div class="filter-chips" id="filterChips">
+            <button class="chip active" data-category="all">All <span class="count">0</span></button>
+            <button class="chip" data-category="chargers">Chargers &amp; Cables <span class="count">0</span></button>
+            <button class="chip" data-category="earphones">Earphones &amp; Headphones <span class="count">0</span></button>
+            <button class="chip" data-category="speakers">Speakers &amp; Mics <span class="count">0</span></button>
+            <button class="chip" data-category="accessories">Accessories <span class="count">0</span></button>
+        </div>
+
+        <p class="results-meta" id="resultsMeta">Showing all products</p>
+
+        <div class="products-grid" id="productsGrid" style="margin-bottom: 3rem;">
+
+            <div class="product-card" data-id="apple-20w-typec-charger" data-product="Apple 20W Type-C Charger" data-price="Rs 4,500" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="charger.jpg" alt="Apple 20W Charger" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Apple+Charger'">
+                    <button class="wishlist-btn" data-id="apple-20w-typec-charger" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Chargers</div>
+                    <h3 class="product-title">Apple 20W Type-C Charger</h3>
+                    <p>Fast charging adapter with cable included.</p>
+                    <div class="product-price">Rs 4,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Apple 20W Type-C Charger" data-price="Rs 4,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart" title="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="j-cell-power-bank-10000" data-product="J-Cell Power Bank 10000mAh" data-price="Rs 5,500" data-category="accessories">
+                <div class="product-image-wrap">
+                    <img src="powerbank.jpg" alt="J-Cell Power Bank" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Power+Bank'">
+                    <span class="product-badge hot">Hot</span>
+                    <button class="wishlist-btn" data-id="j-cell-power-bank-10000" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Power</div>
+                    <h3 class="product-title">J-Cell Power Bank 10000mAh</h3>
+                    <p>High capacity portable charger for all your devices.</p>
+                    <div class="product-price">Rs 5,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="J-Cell Power Bank 10000mAh" data-price="Rs 5,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="akg-typec-earphones" data-product="AKG Type-C Earphones" data-price="Rs 2,500" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="akg.jpg" alt="AKG Type-C Earphones" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=AKG+Earphones'">
+                    <button class="wishlist-btn" data-id="akg-typec-earphones" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Earphones</div>
+                    <h3 class="product-title">AKG Type-C Earphones</h3>
+                    <p>Premium sound quality with deep bass.</p>
+                    <div class="product-price">Rs 2,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="AKG Type-C Earphones" data-price="Rs 2,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="oppa-wired-earphones" data-product="Oppa Wired Earphones" data-price="Rs 400" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="oppa.jpg" alt="Oppa Wired Earphones" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Oppa+Earphones'">
+                    <button class="wishlist-btn" data-id="oppa-wired-earphones" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Earphones</div>
+                    <h3 class="product-title">Oppa Wired Earphones</h3>
+                    <p>Comfortable fit, great sound for daily use.</p>
+                    <div class="product-price">Rs 400</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Oppa Wired Earphones" data-price="Rs 400">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="metal-tripod-stand" data-product="Metal Tripod Stand" data-price="Rs 1,200" data-category="accessories">
+                <div class="product-image-wrap">
+                    <img src="tripod.jpg" alt="Tripod Stand" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Tripod+Stand'">
+                    <button class="wishlist-btn" data-id="metal-tripod-stand" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-title">Metal Tripod Stand</h3>
+                    <p>Sturdy and adjustable stand for cameras and lights.</p>
+                    <div class="product-price">Rs 1,200</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Metal Tripod Stand" data-price="Rs 1,200">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="anc-airpods-pro-2" data-product="ANC AirPods Pro 2" data-price="Rs 3,500" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="airpods.jpg" alt="AirPods Pro 2" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=AirPods+Pro+2'">
+                    <span class="product-badge">Best Seller</span>
+                    <button class="wishlist-btn" data-id="anc-airpods-pro-2" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Wireless Audio</div>
+                    <h3 class="product-title">ANC AirPods Pro 2</h3>
+                    <p>High-quality wireless earbuds with Active Noise Cancellation.</p>
+                    <div class="product-price">Rs 3,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="ANC AirPods Pro 2" data-price="Rs 3,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="olleh-g-fast-charger" data-product="Olleh G Fast Charger" data-price="Rs 500" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="olleh_charger.jpg" alt="Olleh G Charger" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Olleh+G+Charger'">
+                    <button class="wishlist-btn" data-id="olleh-g-fast-charger" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Chargers</div>
+                    <h3 class="product-title">Olleh G Fast Charger</h3>
+                    <p>Reliable and fast charging adapter for daily use.</p>
+                    <div class="product-price">Rs 500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Olleh G Fast Charger" data-price="Rs 500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="airpods-silicone-case" data-product="AirPods Pro 2 Silicone Case" data-price="Rs 300" data-category="accessories">
+                <div class="product-image-wrap">
+                    <img src="silicone_case.jpg" alt="AirPods Case" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Silicone+Case'">
+                    <button class="wishlist-btn" data-id="airpods-silicone-case" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-title">AirPods Pro 2 Silicone Case</h3>
+                    <p>Protective silicone case in multiple colors.</p>
+                    <div class="product-price">Rs 300</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="AirPods Pro 2 Silicone Case" data-price="Rs 300">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="mini-clip-mp3-player" data-product="Mini Clip MP3 Player" data-price="Rs 400" data-category="accessories">
+                <div class="product-image-wrap">
+                    <img src="mp3_player.jpg" alt="Mini MP3 Player" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=MP3+Player'">
+                    <button class="wishlist-btn" data-id="mini-clip-mp3-player" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-title">Mini Clip MP3 Player</h3>
+                    <p>Compact and stylish music player with memory card slot.</p>
+                    <div class="product-price">Rs 400</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Mini Clip MP3 Player" data-price="Rs 400">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="ar773-universal-earphone" data-product="AR773 Universal Earphone" data-price="Rs 450" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="ar773_earphone.jpg" alt="AR773 Universal Earphone" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=AR773+Earphone'">
+                    <button class="wishlist-btn" data-id="ar773-universal-earphone" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Earphones</div>
+                    <h3 class="product-title">AR773 Universal Earphone</h3>
+                    <p>High quality sound, deep bass, and comfortable fit.</p>
+                    <div class="product-price">Rs 450</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="AR773 Universal Earphone" data-price="Rs 450">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="lightning-headphone-adapter" data-product="Lightning to Headphone Jack Adapter" data-price="Rs 1,200" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="lightning_adapter.jpg" alt="Lightning to 3.5mm Adapter" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Lightning+Adapter'">
+                    <button class="wishlist-btn" data-id="lightning-headphone-adapter" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Adapters</div>
+                    <h3 class="product-title">Lightning to Headphone Jack Adapter</h3>
+                    <p>Pop-up window adapter for iPhone lightning to 3.5mm.</p>
+                    <div class="product-price">Rs 1,200</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Lightning to Headphone Jack Adapter" data-price="Rs 1,200">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="ar502-silicone-lightning-cable" data-product="AR502 Silicone Lightning Cable" data-price="Rs 600" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="ar502_cable.jpg" alt="AR502 Silicone Cable" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Silicone+Cable'">
+                    <button class="wishlist-btn" data-id="ar502-silicone-lightning-cable" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Cables</div>
+                    <h3 class="product-title">AR502 Fast Charging Lightning Cable</h3>
+                    <p>Premium silicone softness, durable nylon cable body.</p>
+                    <div class="product-price">Rs 600</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="AR502 Silicone Lightning Cable" data-price="Rs 600">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="geman-fast-car-charger" data-product="Geman Fast Car Charger" data-price="Rs 3,000" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="geman_car_charger.jpg" alt="Geman Fast Car Charger" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Car+Charger'">
+                    <button class="wishlist-btn" data-id="geman-fast-car-charger" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Chargers</div>
+                    <h3 class="product-title">Geman Super Fast Car Charger</h3>
+                    <p>Multi-port fast charging for your vehicle.</p>
+                    <div class="product-price">Rs 3,000</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Geman Fast Car Charger" data-price="Rs 3,000">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="geman-gs05-anc-earbuds" data-product="Geman GS-05 ANC Earbuds" data-price="Rs 4,000" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="geman_earbuds.jpg" alt="Geman GS-05 ANC Earbuds" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Geman+Earbuds'">
+                    <button class="wishlist-btn" data-id="geman-gs05-anc-earbuds" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Wireless Audio</div>
+                    <h3 class="product-title">Geman GS-05 Wireless Earbuds</h3>
+                    <p>ANC (Active Noise Cancellation) true wireless earbuds.</p>
+                    <div class="product-price">Rs 4,000</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Geman GS-05 ANC Earbuds" data-price="Rs 4,000">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="samsung-usbc-adapter" data-product="Samsung USB-C Adapter" data-price="Rs 1,500" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="samsung_adapter.jpg" alt="Samsung USB-C Adapter" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Samsung+Adapter'">
+                    <button class="wishlist-btn" data-id="samsung-usbc-adapter" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Adapters</div>
+                    <h3 class="product-title">Samsung USB-C to 3.5mm Adapter</h3>
+                    <p>Ultra High Quality Audio Headset Jack Adapter.</p>
+                    <div class="product-price">Rs 1,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Samsung USB-C Adapter" data-price="Rs 1,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="ayunwish-stereo-earphones" data-product="Ayunwish Stereo Earphones" data-price="Rs 3,000" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="ayunwish_earphones.jpg" alt="Ayunwish Earphones" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Ayunwish+Earphones'">
+                    <button class="wishlist-btn" data-id="ayunwish-stereo-earphones" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Earphones</div>
+                    <h3 class="product-title">Ayunwish Stereo Earphones</h3>
+                    <p>Splendid music experience with high fidelity sound.</p>
+                    <div class="product-price">Rs 3,000</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Ayunwish Stereo Earphones" data-price="Rs 3,000">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="ar733-deep-bass-earphones" data-product="AR733 Earphones" data-price="Rs 500" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="ar733_earphones.jpg" alt="AR733 Earphones" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=AR733+Earphones'">
+                    <button class="wishlist-btn" data-id="ar733-deep-bass-earphones" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Earphones</div>
+                    <h3 class="product-title">AR733 Deep Bass Earphones</h3>
+                    <p>Deep enhanced bass for a high-energy workout experience.</p>
+                    <div class="product-price">Rs 500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="AR733 Earphones" data-price="Rs 500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="wireless-speaker-mic" data-product="Wireless Speaker with Mic" data-price="Rs 6,500" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="wireless_speaker.jpg" alt="Wireless Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Wireless+Speaker'">
+                    <span class="product-badge">Premium</span>
+                    <button class="wishlist-btn" data-id="wireless-speaker-mic" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">Wireless Speaker with Mic</h3>
+                    <p>Portable big sound Bluetooth speaker with microphone included.</p>
+                    <div class="product-price">Rs 6,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Wireless Speaker with Mic" data-price="Rs 6,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="og-premium-glass" data-product="OG Premium Glass Protector" data-price="Rs 600" data-category="accessories">
+                <div class="product-image-wrap">
+                    <img src="og_glass.jpg" alt="OG Glass Screen Protector" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=OG+Glass'">
+                    <button class="wishlist-btn" data-id="og-premium-glass" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Protection</div>
+                    <h3 class="product-title">OG Premium Glass Protector</h3>
+                    <p>High quality ESD edge-to-edge protective glass.</p>
+                    <div class="product-price">Rs 600</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="OG Premium Glass Protector" data-price="Rs 600">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="solar-wireless-speaker-torch" data-product="Solar Wireless Speaker with Torch" data-price="Rs 4,500" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="solar_speaker.jpg" alt="Solar Wireless Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Solar+Speaker'">
+                    <button class="wishlist-btn" data-id="solar-wireless-speaker-torch" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">Solar Wireless Speaker with Torch</h3>
+                    <p>Portable Bluetooth speaker with built-in solar panel and flashlight.</p>
+                    <div class="product-price">Rs 4,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Solar Wireless Speaker with Torch" data-price="Rs 4,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="ws858-karaoke-mic" data-product="WS-858 Wireless Karaoke Mic" data-price="Rs 2,500" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="karaoke_mic.jpg" alt="WS-858 Karaoke Microphone" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Karaoke+Mic'">
+                    <button class="wishlist-btn" data-id="ws858-karaoke-mic" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Microphones</div>
+                    <h3 class="product-title">WS-858 Wireless Karaoke Mic</h3>
+                    <p>Handheld Bluetooth microphone with built-in HiFi speaker.</p>
+                    <div class="product-price">Rs 2,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="WS-858 Wireless Karaoke Mic" data-price="Rs 2,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="kts-1706-solar-speaker" data-product="KTS 1706 Solar MP3 Speaker" data-price="Rs 3,500" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="kts_speaker.jpg" alt="KTS 1706 Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=KTS+Speaker'">
+                    <button class="wishlist-btn" data-id="kts-1706-solar-speaker" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">KTS 1706 Solar MP3 Speaker</h3>
+                    <p>4-inch wireless speaker with solar panel, torch, and FM radio.</p>
+                    <div class="product-price">Rs 3,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="KTS 1706 Solar MP3 Speaker" data-price="Rs 3,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="music-mini-led-speaker" data-product="Music Mini LED Speaker" data-price="Rs 800" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="mini_led_speaker.jpg" alt="Music Mini LED Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Mini+Speaker'">
+                    <button class="wishlist-btn" data-id="music-mini-led-speaker" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">Music Mini LED Speaker</h3>
+                    <p>Colorful LED light Bluetooth mini speaker with USB charging.</p>
+                    <div class="product-price">Rs 800</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Music Mini LED Speaker" data-price="Rs 800">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="jbl-m3-mini-speaker" data-product="JBL M3 Mini Portable Speaker" data-price="Rs 1,500" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="jbl_m3_speaker.jpg" alt="JBL M3 Mini Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=JBL+M3'">
+                    <button class="wishlist-btn" data-id="jbl-m3-mini-speaker" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">JBL M3 Mini Portable Speaker</h3>
+                    <p>Compact Bluetooth speaker with TF card support and big sound.</p>
+                    <div class="product-price">Rs 1,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="JBL M3 Mini Portable Speaker" data-price="Rs 1,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="j01-multimedia-speaker" data-product="J01 Multimedia Audio Speaker" data-price="Rs 1,800" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="j01_speaker.jpg" alt="J01 Multimedia Audio Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=J01+Speaker'">
+                    <button class="wishlist-btn" data-id="j01-multimedia-speaker" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">J01 Multimedia Audio Speaker</h3>
+                    <p>Hi-Fi stereo portable speaker with super sound quality.</p>
+                    <div class="product-price">Rs 1,800</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="J01 Multimedia Audio Speaker" data-price="Rs 1,800">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="apple-usbc-20w-adapter" data-product="Apple USB-C 20W Power Adapter" data-price="Rs 3,000" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="apple_20w_adapter.jpg" alt="Apple USB-C 20W Power Adapter" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Apple+Adapter'">
+                    <button class="wishlist-btn" data-id="apple-usbc-20w-adapter" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Chargers</div>
+                    <h3 class="product-title">Apple USB-C 20W Power Adapter</h3>
+                    <p>Original style fast charging adapter for iPhone and iPad.</p>
+                    <div class="product-price">Rs 3,000</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Apple USB-C 20W Power Adapter" data-price="Rs 3,000">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="6a-typec-cable" data-product="6A Fast Charging Type-C Cable" data-price="Rs 500" data-category="chargers">
+                <div class="product-image-wrap">
+                    <img src="6a_typec_cable.jpg" alt="6A Fast Charging Cable" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=6A+Cable'">
+                    <button class="wishlist-btn" data-id="6a-typec-cable" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Cables</div>
+                    <h3 class="product-title">6A Fast Charging Type-C Cable</h3>
+                    <p>Super fast 6A USB to Type-C charging cable, durable build.</p>
+                    <div class="product-price">Rs 500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="6A Fast Charging Type-C Cable" data-price="Rs 500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="lenovo-wireless-neckband" data-product="Lenovo Wireless Neckband" data-price="Rs 3,500" data-category="earphones">
+                <div class="product-image-wrap">
+                    <img src="lenovo_neckband.jpg" alt="Lenovo Neckband Earphones" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Lenovo+Neckband'">
+                    <button class="wishlist-btn" data-id="lenovo-wireless-neckband" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Wireless Audio</div>
+                    <h3 class="product-title">Lenovo Wireless Neckband</h3>
+                    <p>Bluetooth hanging headphones with deep bass and long battery.</p>
+                    <div class="product-price">Rs 3,500</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Lenovo Wireless Neckband" data-price="Rs 3,500">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="mini-tws-speaker" data-product="Mini TWS Wireless Speaker" data-price="Rs 1,200" data-category="speakers">
+                <div class="product-image-wrap">
+                    <img src="mini_tws_speaker.jpg" alt="Mini TWS Wireless Speaker" class="product-image" loading="lazy" onerror="this.src='https://placehold.co/400x250/141b2d/3b82f6?text=Mini+TWS+Speaker'">
+                    <button class="wishlist-btn" data-id="mini-tws-speaker" aria-label="Add to wishlist"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Speakers</div>
+                    <h3 class="product-title">Mini TWS Wireless Speaker</h3>
+                    <p>Compact wireless speaker with TWS pairing and selfie button.</p>
+                    <div class="product-price">Rs 1,200</div>
+                    <div class="product-actions">
+                        <button class="btn btn-whatsapp whatsapp-order-btn" data-product="Mini TWS Wireless Speaker" data-price="Rs 1,200">
+                            <i class="fa-brands fa-whatsapp"></i> Order
+                        </button>
+                        <button class="add-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Cart Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span class="cart-total-label">Subtotal</span>
+                <span class="cart-total-value" id="cartTotal">Rs 0</span>
+            </div>
+            <button class="btn btn-primary" id="cartCheckout" style="margin-bottom: 0.5rem; width: 100%;">
+                <i class="fa-solid fa-credit-card"></i> Pay with Card
+            </button>
+            <button class="btn btn-outline" id="cartClear" style="width: 100%;">Clear Cart</button>
+            <p class="cart-note">Delivery charges are calculated separately at checkout.</p>
+        </div>
+    </aside>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab fab-top" id="fabTop" aria-label="Back to top" title="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <button class="fab fab-whatsapp" id="fabWhatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+                        <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+                    </a>
+                    <p>Premium accessories. Direct WhatsApp ordering. Delivery across Pakistan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="products.html#chargers">Chargers &amp; Cables</a></li>
+                        <li><a href="products.html#earphones">Earphones</a></li>
+                        <li><a href="products.html#speakers">Speakers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923273032424" target="_blank"><i class="fa-brands fa-whatsapp"></i> +92 327 3032424</a></li>
+                        <li><a href="mailto:info.cartxen@gmail.com"><i class="fa-solid fa-envelope"></i> info.cartxen@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cartxen_store" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/cartxen" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/923273032424" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 cartxen_store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

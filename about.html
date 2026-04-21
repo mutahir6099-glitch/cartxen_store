@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | cartxen_store</title>
+    <meta name="description" content="The story behind cartxen_store — our mission, values and commitment to quality products at fair Pakistani prices.">
+    <meta name="theme-color" content="#0a0f1a">
+    <meta property="og:title" content="About Us | cartxen_store">
+    <meta property="og:description" content="Our commitment to delivering value to our customers.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛒%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Announcement -->
+    <div class="announcement-bar">
+        <i class="fa-solid fa-truck-fast"></i> Fast processing &amp; delivery across Pakistan — chat on WhatsApp to order
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="wishlistToggle" aria-label="Wishlist" title="Wishlist">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge" id="wishlistCount">0</span>
+                </button>
+                <button class="icon-btn" id="cartToggle" aria-label="Cart" title="Cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>About Us</span>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>About cartxen_store</h1>
+        <p>Our commitment to delivering value to our customers.</p>
+    </div>
+
+    <!-- About Story -->
+    <section class="section">
+        <div class="about-content reveal" style="max-width: 900px; margin: 0 auto; grid-template-columns: 1fr; text-align: center;">
+            <div>
+                <h2 style="color: var(--accent-blue); margin-bottom: 1.5rem;">Dedicated to Quality Products</h2>
+                <p>At cartxen_store, we believe in providing our customers with the best quality products at reasonable Pakistani prices. From mobile accessories like power banks and earphones to handy tools like stainless steel peelers, we've got you covered.</p>
+                <p>We bypassed the traditional confusing e-commerce setups and implemented a straightforward, direct-to-customer WhatsApp ordering system. This allows us to connect with you directly and process your orders fast.</p>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-value" data-count="1200" data-suffix="+">0</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value" data-count="30" data-suffix="+">0</div>
+                <div class="stat-label">Products Available</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value" data-count="98" data-suffix="%">0</div>
+                <div class="stat-label">Positive Feedback</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-value" data-count="24" data-suffix="h">0</div>
+                <div class="stat-label">Avg. WhatsApp Reply</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section" style="background-color: var(--bg-elevated); max-width: 100%; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <h2 class="section-title reveal">Our Values</h2>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <i class="fa-solid fa-award feature-icon"></i>
+                    <h3>Quality First</h3>
+                    <p>Every product in our catalogue is personally tested and inspected before it reaches your hands.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <i class="fa-solid fa-comments feature-icon"></i>
+                    <h3>Direct Support</h3>
+                    <p>Talk to a human on WhatsApp — not a bot. Get your questions answered fast and clearly.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <i class="fa-solid fa-tags feature-icon"></i>
+                    <h3>Clear Pricing</h3>
+                    <p>Fair Pakistani prices with no hidden fees. Delivery charges are always stated upfront.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <i class="fa-solid fa-heart feature-icon"></i>
+                    <h3>Customer-First</h3>
+                    <p>We'd rather keep one happy customer than make a quick sale. Your trust is worth more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="section" style="scroll-margin-top: 100px;">
+        <h2 class="section-title reveal">How Ordering Works</h2>
+        <p class="section-subtitle reveal">Three simple steps from browse to doorstep.</p>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <i class="fa-solid fa-1 feature-icon"></i>
+                <h3>Browse &amp; Pick</h3>
+                <p>Explore our products and add favourites to your cart or wishlist.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fa-solid fa-2 feature-icon"></i>
+                <h3>Message on WhatsApp</h3>
+                <p>Tap the WhatsApp button — your order is pre-filled. We'll confirm stock and total.</p>
+            </div>
+            <div class="feature-card reveal">
+                <i class="fa-solid fa-3 feature-icon"></i>
+                <h3>Receive &amp; Enjoy</h3>
+                <p>We dispatch fast. Delivery charges apply — all confirmed upfront.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
+            <a href="products.html" class="btn btn-primary">See Our Products <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Cart Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody"></div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span class="cart-total-label">Subtotal</span>
+                <span class="cart-total-value" id="cartTotal">Rs 0</span>
+            </div>
+            <button class="btn btn-primary" id="cartCheckout" style="margin-bottom: 0.5rem; width: 100%;">
+                <i class="fa-solid fa-credit-card"></i> Pay with Card
+            </button>
+            <button class="btn btn-outline" id="cartClear" style="width: 100%;">Clear Cart</button>
+            <p class="cart-note">Delivery charges are calculated separately at checkout.</p>
+        </div>
+    </aside>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab fab-top" id="fabTop" aria-label="Back to top" title="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <button class="fab fab-whatsapp" id="fabWhatsapp" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 0.75rem;">
+                        <i class="fa-solid fa-store"></i> <span>cartxen</span>_store
+                    </a>
+                    <p>Premium accessories. Direct WhatsApp ordering. Delivery across Pakistan.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="products.html">All Products</a></li>
+                        <li><a href="products.html#chargers">Chargers &amp; Cables</a></li>
+                        <li><a href="products.html#earphones">Earphones</a></li>
+                        <li><a href="products.html#speakers">Speakers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="https://wa.me/923273032424" target="_blank"><i class="fa-brands fa-whatsapp"></i> +92 327 3032424</a></li>
+                        <li><a href="mailto:info.cartxen@gmail.com"><i class="fa-solid fa-envelope"></i> info.cartxen@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cartxen_store" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/cartxen" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/923273032424" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 cartxen_store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
