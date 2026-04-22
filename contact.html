@@ -17,7 +17,12 @@
 
     <!-- Announcement -->
     <div class="announcement-bar">
-        <i class="fa-solid fa-truck-fast"></i> Fast processing &amp; delivery across Pakistan — chat on WhatsApp to order
+        <div class="ticker-content">
+            <i class="fa-solid fa-truck-fast"></i> Fast processing &amp; delivery across Pakistan
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp to order
+            <i class="fa-solid fa-shield-halved"></i> 100% Quality Tested Products
+            <i class="fa-solid fa-star"></i> Top Rated Accessories Store
+        </div>
     </div>
 
     <!-- Sticky Navbar -->
@@ -107,27 +112,46 @@
 
             <!-- Quick Message Form -->
             <div class="contact-form-card reveal">
-                <h2 style="margin-bottom: 0.5rem;">Send a Quick Message</h2>
-                <p style="margin-bottom: 2rem;">Fill in the form and we'll open WhatsApp with your message ready to send.</p>
+                <div class="form-header">
+                    <div class="form-badge">Direct Line</div>
+                    <h2>Send a Quick Message</h2>
+                    <p>Fill in the form and we'll open WhatsApp with your message ready to send.</p>
+                </div>
                 <form id="contactForm" novalidate>
                     <div class="form-group">
                         <label for="cfName">Your Name</label>
-                        <input type="text" id="cfName" class="form-input" placeholder="e.g. Ali Raza" required>
+                        <div class="input-group">
+                            <i class="fa-solid fa-user input-icon"></i>
+                            <input type="text" id="cfName" class="form-input" placeholder="" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="cfTopic">Topic <span style="color: var(--text-muted); font-weight: 400;">(optional)</span></label>
-                        <input type="text" id="cfTopic" class="form-input" placeholder="e.g. Question about AirPods Pro 2">
+                        <label for="cfTopic">Topic <span class="optional-label">(optional)</span></label>
+                        <div class="input-group">
+                            <i class="fa-solid fa-tag input-icon"></i>
+                            <input type="text" id="cfTopic" class="form-input" placeholder="">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="cfMessage">Message</label>
-                        <textarea id="cfMessage" class="form-textarea" placeholder="Tell us what you need..." required></textarea>
+                        <div class="input-group textarea-group">
+                            <i class="fa-solid fa-comment-dots input-icon"></i>
+                            <textarea id="cfMessage" class="form-textarea" placeholder="" required></textarea>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> Send via WhatsApp
-                    </button>
-                    <p class="cart-note" style="margin-top: 0.75rem;">Tapping send opens WhatsApp with your message pre-filled.</p>
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-whatsapp btn-premium">
+                            <span>Send via WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                        <div class="form-hint">
+                            <i class="fa-solid fa-circle-info"></i>
+                            Tapping send opens WhatsApp with your message pre-filled.
+                        </div>
+                    </div>
                 </form>
             </div>
+
 
         </div>
     </section>
@@ -153,7 +177,7 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>No. Delivery charges apply and vary depending on your city. We'll confirm the exact charge on WhatsApp before dispatch, so there are no surprises.</p>
+                        <p>No. Delivery charges are calculated based on your distance from our store (starting at Rs 300). You can see the exact charge at checkout before finalizing your order.</p>
                     </div>
                 </div>
                 <div class="faq-item reveal">

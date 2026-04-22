@@ -439,22 +439,35 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = $("#contactForm");
   contactForm?.addEventListener("submit", e => {
     e.preventDefault();
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
     const name = $("#cfName")?.value.trim();
     const topic = $("#cfTopic")?.value.trim();
     const message = $("#cfMessage")?.value.trim();
+    
     if (!name || !message) {
       toast("Please fill in your name and message", "error");
       return;
     }
+
+    // Visual feedback
+    const originalContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span>Preparing...</span> <i class="fa-solid fa-circle-notch fa-spin"></i>`;
+    
     const body = [
       `Hi, my name is ${name}.`,
       topic ? `Topic: ${topic}` : "",
       "",
       message
     ].filter(Boolean).join("\n");
-    openWhatsApp(body);
-    contactForm.reset();
-    toast("Opening WhatsApp...", "success");
+
+    setTimeout(() => {
+      openWhatsApp(body);
+      contactForm.reset();
+      toast("WhatsApp opened!", "success");
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalContent;
+    }, 800);
   });
 
   // ---------- FAQ accordion ----------
